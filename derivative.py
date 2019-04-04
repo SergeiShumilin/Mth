@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
+
 def f(x):
     """Экспериментальная функция x^3"""
     return math.log1p(x)
@@ -31,15 +32,13 @@ def cycle(xs, der_xs, f):
     return res
 
 
-
 if __name__ == '__main__':
     xs = np.arange(0.00001, 10, 0.00001)
     print('xs: ' + str(xs))
-    der_xs = [dydx(xs[i-1], xs[i], f(xs[i-1]), f(xs[i])) for i in range(1, len(xs))]
+    der_xs = [dydx(xs[i - 1], xs[i], f(xs[i - 1]), f(xs[i])) for i in range(1, len(xs))]
     print(der_xs)
-    #prozv = cycle(xs, der_xs, build_der_func)
-
+    # prozv = cycle(xs, der_xs, build_der_func)
 
     ys = [f(x) for x in xs]
-    plt.plot(xs, ys, xs[:len(xs)-1], der_xs)
+    plt.plot(xs, ys, xs[:len(xs) - 1], der_xs)
     plt.show()
