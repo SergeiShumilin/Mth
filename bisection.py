@@ -6,7 +6,7 @@ if __name__ == '__main__':
     # Массив для поиска элемента.
     array = range(0, 50)
     array = sorted(array)
-    x = 40.84
+    x = 0
     a = 0
     b = len(array) - 1
     m = (b + a) // 2
@@ -20,11 +20,11 @@ if __name__ == '__main__':
             b = m
             break
 
+        m = (b + a) // 2
+
         if x < array[m]:
             b = m
-            m = (b + a) // 2
         else:
             a = m
-            m = (b + a) // 2
 
     print('Ответ: ' + str(a) + ' > x > ' + str(b))
